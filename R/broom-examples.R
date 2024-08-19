@@ -11,12 +11,12 @@ nlsy <- read_csv(here::here("data", "raw", "nlsy.csv"),
 				 sex_cat = factor(sex, labels = c("Male", "Female")),
 				 race_eth_cat = factor(race_eth, labels = c("Hispanic", "Black", "Non-Black, Non-Hispanic")),
 				 eyesight_cat = factor(eyesight, labels = c("Excellent", "Very good", "Good", "Fair", "Poor")))
-
+#running the analysis
 mod_sex_cat <- lm(income ~ sex_cat, data = nlsy)
 mod_race_eth_cat <- lm(income ~ race_eth_cat, data = nlsy)
 mod_eyesight_cat <- lm(income ~ eyesight_cat, data = nlsy)
 mod_age_bir <- lm(income ~ age_bir, data = nlsy)
-
+#below takes the above and gives just the needed numbers
 tidy_sex_cat <- tidy(mod_sex_cat, conf.int = TRUE)
 tidy_race_eth_cat <- tidy(mod_race_eth_cat, conf.int = TRUE)
 tidy_eyesight_cat <- tidy(mod_eyesight_cat, conf.int = TRUE)
