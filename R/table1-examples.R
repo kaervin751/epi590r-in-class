@@ -105,10 +105,7 @@ tbl_summary(
 										all_categorical() ~ "chisq.test")) |>
 	add_overall(col_label = "**Total**") |>
 	bold_labels() |>
-	modify_table_styling(
-		footnote = "https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/household/race-ethnicity-immigration-data"
-	) |>
-	modify_header(label = "**Variable**", p.value = "**P**")
+		modify_header(label = "**Variable**", p.value = "**P**")
 
 
 
