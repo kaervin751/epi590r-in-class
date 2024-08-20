@@ -76,3 +76,33 @@ mediansleep
 
 The mean of weekend sleep in participants was `r meansleep` hours.
 The median hours of sleep on weekends is `r mediansleep` hours.
+
+```{r}
+#| label: tbl-descr
+#| tbl-cap: "Descriptive statistics"
+#| output-location: slide
+table1 <- tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat, region_cat,
+              eyesight_cat, glasses, age_bir)) |> 
+  add_overall(last = TRUE)
+table1
+```
+
+`r inline_text(table1, variable = "age_bir", column = "stat_1")`
+
+```{r}
+#| label: tbl-desc
+#| tbl-cap: "Descriptive statistic"
+#| output-location: slide
+table2 <- tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat, region_cat,
+              eyesight_cat, glasses, age_bir, sleep_wknd)) |> 
+  add_overall(last = TRUE)
+table2
+```
+
+`r inline_text(table2, variable = "sleep_wknd", column = "stat_0")`
