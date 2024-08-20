@@ -70,7 +70,9 @@ tbl_summary(
 #| echo: false
 meansleep <- mean(nlsy$sleep_wknd, na.rm=TRUE)
 mediansleep <- median(nlsy$sleep_wknd, na.rm=TRUE)
+meansleep
+mediansleep
 ```
 
 The mean of weekend sleep in participants was `r meansleep` hours.
-The median hours of sleep on weekends is `r mediansleep` hours
+The median hours of sleep on weekends is `r mediansleep` hours.
